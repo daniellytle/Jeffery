@@ -3,7 +3,7 @@ var express = require('express');
 var handles = require('express-handlebars');
 var bodyParser = require('body-parser');
 var request = require('request');
-var weather = require('./app/weather.js');
+var content = require('./app/content.js');
 var messenger = require('./app/messenger.js');
 var app = express();
 
@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(express.static(__dirname + '/public'));
 
 // Load Routes
-require('./app/routes')(app);
-require('./app/cron')(weather, messenger);
+require('./app/routes')(app, messenger, content);
+require('./app/cron')(content, messenger);
 
 // This allows us to use handlebars as our template engine
 app.set('views', __dirname + '/public/views');

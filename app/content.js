@@ -1,6 +1,13 @@
 var request = require('request');
-
 module.exports = {
+
+	getQuote: function(cb) {
+		request('http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en', function(error, response, data) {
+			data = JSON.parse(data);
+			data = data.quoteText;
+			cb(data);
+		})
+	},
 
 	getForecast: function(callback) {
 		request('http://api.wunderground.com/api/f16862c4e9ebe2fb/forecast/q/MI/Ann_Arbor.json', function (error, response, body) {

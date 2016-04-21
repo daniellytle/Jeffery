@@ -1,11 +1,11 @@
-module.exports = function(weather, messenger) {
+module.exports = function(content, messenger) {
 
     // Morning News
     var CronJob = require('cron').CronJob;
     var job = new CronJob('00 00 09 * * *', function() {
 
       console.log('starting cron job')
-      weather.getForecast(function(data) {
+      content.getForecast(function(data) {
           var morning = "Happy " + data.day + " East Jeff. " + data.forecast;
           console.log(" morning", morning);
           // messenger.postMessage(morning);

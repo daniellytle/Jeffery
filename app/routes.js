@@ -17,6 +17,7 @@ module.exports = function(app, messenger, content) {
 				text = text.substring(9);
 				console.log(text);
 				content.getResponse(text, function(data) {
+					console.log(data)
 					var speech = data.result.fulfillment.speech;
 					messenger.postMessage(speech, function(msg) {
 						console.log(msg);

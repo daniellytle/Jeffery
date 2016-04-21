@@ -5,7 +5,7 @@ module.exports = function(app, messenger, content) {
 	app.post('/group-message', function(req, res) {
 		console.log(req.body)
 		var text = req.body.text;
-		if (req.body.text.startsWith(prefix)) {	
+		if (req.body.text.substring(0,8) == prefix) {	
 			if (req.body.text == "@jeffery inspire") {
 				content.getQuote(function(quote) {
 					messenger.postMessage(quote, function(msg) {

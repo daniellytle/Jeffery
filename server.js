@@ -28,5 +28,5 @@ app.engine('.hbs', handles({
 }));
 
 // BEGIN
-var server = app.listen(8888);
+var server = app.listen(80);
 console.log('Server magic happens at port 8888');

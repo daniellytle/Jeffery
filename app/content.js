@@ -45,7 +45,7 @@ module.exports = {
 			body = JSON.parse(body);
 			var id = body.data[0].id;
 			var url = "http://i.giphy.com/" + id + ".gif";
-			return url;
+			callback(url);
 		})
 	}
 

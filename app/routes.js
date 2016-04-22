@@ -4,7 +4,7 @@ module.exports = function(app, messenger, content) {
     // New Groupme Message
 	app.post('/group-message', function(req, res) {
 		console.log(req.body);
-		var text = req.body.text;
+		var text = req.body.text.toLowerCase();
 		if (text.indexOf(prefix) > -1) {	
 			if (req.body.text == "jeffy inspire") {
 				content.getQuote(function(quote) {

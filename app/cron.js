@@ -2,7 +2,7 @@ module.exports = function(content, messenger) {
 
     // Morning News
     var CronJob = require('cron').CronJob;
-    var job = new CronJob('00 00 09 * * *', function() {
+    var job = new CronJob('40 9 * * * *', function() {
 
       console.log('starting cron job')
       content.getForecast(function(data) {

@@ -1,2 +1,0 @@
-#!/bin/sh
-git --work-tree=/root/jeffery --git-dir=/Users/daniel/personal/projects/jeffery checkout -f

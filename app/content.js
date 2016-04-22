@@ -38,6 +38,7 @@ module.exports = {
 	},
 
 	getGif: function(query, callback) {
+		query = query.toString();
 		query = query.replace(',','+');
 		console.log(query);
 		request('http://api.giphy.com/v1/gifs/search?q='+ query +'&api_key=dc6zaTOxFJmzC', function(error, response, body) {

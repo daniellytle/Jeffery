@@ -14,8 +14,7 @@ module.exports = function(content, messenger) {
   }, function () {
     /* This function is executed when the job stops */
   },
-  true,
-  "EST"
+  true
     );
 
 }
